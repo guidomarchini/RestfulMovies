@@ -19,6 +19,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<kotlin.version>1.4.32</kotlin.version>
+		<h2.version>1.4.200</h2.version>
+		<mysql.version>8.0.26</mysql.version>
 		<mockito-kotlin.version>2.2.0</mockito-kotlin.version>
 	</properties>
 
@@ -49,6 +51,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- persistence -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
 		</dependency>
 
 		<!-- Mockito -->

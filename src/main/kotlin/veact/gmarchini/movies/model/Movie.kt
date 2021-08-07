@@ -5,5 +5,6 @@ package veact.gmarchini.movies.model
  */
 data class Movie(
     val name: String,
-    val year: Int
+    val year: Int,
+    val id: Int
 )
