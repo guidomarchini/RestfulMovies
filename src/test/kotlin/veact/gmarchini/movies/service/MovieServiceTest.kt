@@ -17,7 +17,7 @@ internal class MovieServiceTest {
     lateinit var repository: MovieRepository
     lateinit var mapper: MovieMapper
 
-    val modelObject: Movie = Movie(
+    private val modelObject: Movie = Movie(
         name = "Fight club",
         year = 1999,
         id = 1
@@ -65,6 +65,21 @@ internal class MovieServiceTest {
         // act
         val result: Movie? =
             movieService.get(id)
+
+        // assert
+        Assertions.assertThat(modelObject).isEqualTo(result)
+    }
+
+    @Test
+    fun `it gets movies by name`() {
+        // arrange
+        val name: String = "fight"
+        whenever(repository.getByNameContainingIgnoreCase(name))
+            .thenReturn(entityObject)
+
+        // act
+        val result: Movie? =
+            movieService.getByName(name)
 
         // assert
         Assertions.assertThat(modelObject).isEqualTo(result)

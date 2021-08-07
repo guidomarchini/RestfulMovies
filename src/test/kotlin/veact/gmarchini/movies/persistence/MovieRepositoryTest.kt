@@ -59,6 +59,21 @@ internal class MovieRepositoryTest @Autowired constructor(
     }
 
     @Test
+    fun `it returns a movie by name ignoring case`() {
+        // arrange
+        val movie: MovieEntity = entityManager.persistAndFlush(sampleEntity())
+
+        // act
+        val savedInstance: MovieEntity? = repository.getByNameContainingIgnoreCase(movie.name.substring(0..3).lowercase())
+
+        // assert
+        Assertions.assertThat(savedInstance).isNotNull
+        Assertions.assertThat(savedInstance?.id).isNotNull
+        Assertions.assertThat(savedInstance?.name).isEqualTo(movie.name)
+        Assertions.assertThat(savedInstance?.year).isEqualTo(movie.year)
+    }
+
+    @Test
     fun `it returns the movies ordered by name`() {
         // arrange
         entityManager.persistAndFlush(

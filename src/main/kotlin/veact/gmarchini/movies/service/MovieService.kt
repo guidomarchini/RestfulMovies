@@ -18,6 +18,9 @@ class MovieService @Autowired constructor(
     fun get(id: Int): Movie? =
         repository.findByIdOrNull(id)?.let { mapper.toModel(it) }
 
+    fun getByName(name: String): Movie? =
+        repository.getByNameContainingIgnoreCase(name)?.let { mapper.toModel(it) }
+
     fun getAll(): List<Movie> =
         repository.getAllByOrderByName().map { mapper.toModel(it) }
 
