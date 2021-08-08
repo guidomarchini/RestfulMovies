@@ -21,6 +21,7 @@
 		<kotlin.version>1.5.21</kotlin.version>
 		<h2.version>1.4.200</h2.version>
 		<mysql.version>8.0.26</mysql.version>
+		<springfox-swagger.version>2.9.2</springfox-swagger.version>
 		<rest-assured.version>4.2.0</rest-assured.version>
 		<mockito-kotlin.version>2.2.0</mockito-kotlin.version>
 	</properties>
@@ -67,6 +68,18 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
+		</dependency>
+
+		<!-- swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-swagger.version}</version>
 		</dependency>
 
 		<!-- Testing -->
