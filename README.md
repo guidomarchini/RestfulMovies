@@ -27,6 +27,7 @@ This project was made in Kotlin using spring-boot. It has several layers:
 ## Docker
 There's a docker file in order to create a docker image. IE:
 >docker build -t movies:v1
+>
 >docker run --name movies -p 8080:8080 movies:v1
 
 ## Dev notes
@@ -34,7 +35,7 @@ Here are some notes about the problem statement:
 
 `For data persistence we use the data store which is most suitable for the job`
 
-I don't understand what kind of "data store" do you mean. The project is split into different layers so the only thing that would be needed to use a specific database would be to change the persistence layer.
+I don't understand what kind of "data store" do you mean. The project is split into different layers to lose coupling, so any needed change would be inside the persistence layer.
 
 `The service will be running in production. Make sure it is prepared for it and we know what it is doing`
 
