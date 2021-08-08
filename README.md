@@ -5,10 +5,11 @@ This is a RESTful microservice with CRUD implementation of movies.
 
 ## Getting up the server
 > mvn install
+> 
 > mvn spring-boot:run
 
 ## Services
-This project has a swagger documentation. please check `/swagger-ui.html` to see it.
+This project has a swagger documentation. please check `/swagger-ui.html` to see the restful services documentation.
 
 ## About the project
 This project was made in Kotlin using spring-boot. It has several layers:
@@ -19,7 +20,7 @@ This project was made in Kotlin using spring-boot. It has several layers:
   * Here you can find the Controller and application layer logic.
   
 * Service
-  * We don't have business logic here, but it would be here. The only thing that it does in this project is to communicate with the persistence layer.
+  * The project doesn't have business business logic, but it would be here. In this case, the service acts as an intermediary for the application and persistence layer.
   
 * Persistence
   * Repository and entities. It's on spring JPA. This is the only place that knows about database domain.
